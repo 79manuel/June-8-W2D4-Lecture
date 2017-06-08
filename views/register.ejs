@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+  <style>
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+  }
+  .error {
+    color: tomato;
+  }
+  </style>
+</head>
+<body>
+  <h1>Please Sign Up For A New Account</h1>
+  <p>You will be entered for a draw and may receive a free pony</p>
+  <% if(locals.error){ %> 
+    <p class='error'><%= error %></p>
+  <% } %>
+  <form action="/register" method="POST">
+    <p>
+      <label>Email</label>
+      <input type='email' name='email'/>
+    </p>
+    <p>
+      <label>Name</label>
+      <input type='text' name='name'/>
+    </p>
+    <p>
+      <label>Password</label>
+      <input type='password' name='password'/>
+    </p>
+    <p>
+      <button type='submit'>Log In</button>
+    </p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+  <style>
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Hello!</h1>
+  <% if(locals.user){ %>
+    <p>Welcome, <span><%= user.name %></span></p>
+    <form method="POST" action='/logout'>
+      <button type='submit'>Log Out</button>
+    </form>
+  <% } else { %>
+    <p style='text-transform: uppercase;'>Do. I. know. you? <a href='/login'>Login</a><a href='/register'>Sign Up</a></p>
+  <% } %>
+</body>
+</html>
